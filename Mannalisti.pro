@@ -18,9 +18,11 @@ TEMPLATE = app
 SOURCES += main.cpp \
     man.cpp \
     database.cpp \
-    services.cpp
+    services.cpp \
+    controlui.cpp
 
 HEADERS += \
     man.h \
     database.h \
-    services.h
+    services.h \
+    controlui.h
