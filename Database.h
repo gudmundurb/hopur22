@@ -23,8 +23,10 @@ class Database
         void sortLastName();
         void sortBirthYear();
         void sortDeathYear();
-        vector<Man> searchName(bool isLast, string name);
-        vector<Man> searchYear(bool isBirth, int year);
+        vector<Man> searchFirstName(string name);
+        vector<Man> searchLastName(string name);
+        vector<Man> searchBirth(int year);
+        vector<Man> searchDeath(int year);
     private:
         vector<Man> data;
 };
