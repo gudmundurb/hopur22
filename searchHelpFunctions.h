@@ -10,5 +10,6 @@
 #define __skil1_verklegt__searchHelpFunctions__
 
 #include <stdio.h>
+#include "searchfunction.h"
 
 #endif /* defined(__skil1_verklegt__searchHelpFunctions__) */

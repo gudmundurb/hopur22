@@ -8,46 +8,47 @@
 
 #include "searchfunction.h"
 
-
-#include <iostream>
-#include <string>
-#include <cctype>
-#include <vector>
-
 using namespace std;
 
 int continueSearch();
 
-void search(vector<Man> famousProgrammer){
-    
+void search(){
+
     char option;
     int invalid;
-    
+    string name;
+    int year;
+
     do{
         cout << "What would you like to search for? \npress:\n1 for first name \n2 for last name\n";
         cout << "3 for gender \n4 for year of birth \n5 for year of death \n6 to return\n";
         cin >> option;
-        
+
         switch(option){
             case '1':
                 cout << "First name: ";
-                searchName(option, famousProgrammer);
+                cin >> name;
+                searchName(false, name);
                 break;
             case '2':
                 cout << "Last name: ";
-                searchName(option, famousProgrammer);
+                cin >> name;
+                searchName(true, name);
                 break;
             case '3':
                 cout << "Gender(m/f): ";
-                searchGender(famousProgrammer);
+                cin >> option;
+                searchGender(option);
                 break;
             case '4':
                 cout << "Year of birth: ";
-                searchYear(option, famousProgrammer);
+                cin >> year;
+                searchYear(true, year);
                 break;
             case '5':
                 cout << "Year of death: ";
-                searchYear(option, famousProgrammer);
+                cin >> year;
+                searchYear(false, year);
                 break;
             case '6':
                 return;

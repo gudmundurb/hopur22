@@ -7,3 +7,13 @@
 //
 
 #include "searchHelpFunctions.h"
+
+
+vector<int> search(bool last, string name){
+
+    if(last){
+
+
+    }
+
+}
