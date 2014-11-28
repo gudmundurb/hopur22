@@ -17,6 +17,7 @@ private:
 public:
     Man();
     Man(string fname, string lname, char gen, int byear, int dyear);
+    bool validate();
     string getFirst() const;
     string getLast() const;
     int getBirthYear() const;

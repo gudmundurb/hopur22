@@ -5,8 +5,16 @@ int main()
 {
     Services s;
     s.display();
-    s.sort(2);
+    s.sort(3);
     cout << endl;
     s.display();
+    Man m1;
+    cin >> m1;
+    s.add(m1);
+    if(m1.validate())
+    {
+    cout << "The following person has been added to the database." << endl;
+    cout << m1;
+    }
     return 0;
 }
