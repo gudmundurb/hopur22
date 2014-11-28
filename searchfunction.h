@@ -14,5 +14,6 @@
 #include <string>
 #include <iostream>
 #include <cctype>
+#include "services.h"
 
 #endif /* defined(__skil1_verklegt__searchfunction__) */
