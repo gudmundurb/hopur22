@@ -11,8 +11,10 @@ int main()
     Man m1;
     cin >> m1;
     s.add(m1);
+    if(m1.validate())
+    {
     cout << "The following person has been added to the database." << endl;
     cout << m1;
-
+    }
     return 0;
 }

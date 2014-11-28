@@ -2,14 +2,12 @@
 
 Services::Services()
 {
-    //cout << "Service constructed." << endl;
     d = Database();
     d.start();
 }
 
 Services::~Services()
 {
-    //dtor
     d.finish();
 }
 void Services::display()
