@@ -51,10 +51,7 @@ void Database::setData(vector<Man> v)
 }
 void Database::display()
 {
-    for(unsigned int i = 0; i < data.size(); i++)
-    {
-        cout << data[i];
-    }
+    cout << data;
 }
 void Database::add(Man m1)
 {
@@ -92,4 +89,20 @@ bool sortByBirthYear(const Man& m1, const Man& m2)
 bool sortByDeathYear(const Man& m1, const Man& m2)
 {
     return m1.getBirthYear() < m2.getBirthYear();
+}
+ostream& operator << (ostream& os, vector<Man> vm1)
+{
+    os << left << setw(15) << "First name" << setw(15) << "Last name" << setw(8) << "Gender" << setw(6) << "Born"
+         << "Dead" << endl;
+    for(int i = 0; i < 48; i++)
+    {
+        os << "-";
+    }
+    cout << endl;
+    for(unsigned int i = 0; i < vm1.size(); i++)
+    {
+        os << vm1[i];
+    }
+    os << endl;
+    return os;
 }

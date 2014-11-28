@@ -30,4 +30,5 @@ bool sortByFirstName(const Man& m1, const Man& m2);
 bool sortByLastName(const Man& m1, const Man& m2);
 bool sortByBirthYear(const Man& m1, const Man& m2);
 bool sortByDeathYear(const Man& m1, const Man& m2);
+ostream& operator << (ostream& os, vector<Man> vm1);
 #endif // DATABASE_H

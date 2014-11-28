@@ -14,13 +14,6 @@ Services::~Services()
 }
 void Services::display()
 {
-    cout << left << setw(15) << "First name" << setw(15) << "Last name" << setw(8) << "Gender" << setw(6) << "Born"
-         << "Dead" << endl;
-    for(int i = 0; i < 48; i++)
-    {
-        cout << "-";
-    }
-    cout << endl;
     d.display();
 }
 void Services::add(Man m1)
