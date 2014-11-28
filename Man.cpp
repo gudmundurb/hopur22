@@ -19,6 +19,23 @@ Man::Man(string fname, string lname, char gen, int byear, int dyear)
     birthyear = byear;
     deathyear = dyear;
 }
+bool Man::validate()
+{
+    if(deathyear - birthyear > 110 || birthyear > deathyear) return false;
+    if(gender != 'M' && gender != 'F') return false;
+    firstName[0] = toupper(firstName[0]);
+    lastName[0] = toupper(lastName[0]);
+    /*for(unsigned int i = 0; i < firstName.size(); i++)
+    {
+        if(!isalpha(firstName[i])) return false;
+    }
+    for(unsigned int i = 0; i < firstName.size(); i++)
+    {
+        if(!isalpha(lastName[i])) return false;
+    }*/
+    return true;
+}
+
 ofstream& operator << (ofstream& os, Man& m1)
 {
     os  << m1.firstName << "\t"
@@ -31,7 +48,6 @@ ofstream& operator << (ofstream& os, Man& m1)
 }
 ifstream& operator >> (ifstream& is, Man& m1)
 {
-    cout << "Ifstream" << endl;
     cout << "First Name: ";
     is >> m1.firstName;
     cout << "Last Name: ";
@@ -42,7 +58,6 @@ ifstream& operator >> (ifstream& is, Man& m1)
     is >> m1.birthyear;
     cout << "Year of death: ";
     is >> m1.deathyear;
-
     return is;
 }
 ostream& operator << (ostream& os, Man& m1)
