@@ -118,7 +118,7 @@ vector<Man> Database::searchFirstName(string name){
             }
 
         }
-return nameVector;
+    return nameVector;
 }
 
 vector<Man> Database::searchLastName(string name){
@@ -130,7 +130,7 @@ vector<Man> Database::searchLastName(string name){
         }
 
     }
-return nameVector;
+    return nameVector;
 }
 
 vector<Man> Database::searchBirth(int year){
@@ -142,7 +142,7 @@ vector<Man> Database::searchBirth(int year){
             }
 
         }
-return yearVector;
+    return yearVector;
 }
 
 vector<Man> Database::searchDeath(int year){
@@ -153,5 +153,5 @@ vector<Man> Database::searchDeath(int year){
             yearVector.push_back(data[i]);
         }
     }
-return yearVector;
+    return yearVector;
 }
