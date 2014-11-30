@@ -18,39 +18,35 @@ void search(){
     int invalid;
     string name;
     int year;
+    const vector<Man> OUTPUT;
 
     do{
         cout << "What would you like to search for? \npress:\n1 for first name \n2 for last name\n";
-        cout << "3 for gender \n4 for year of birth \n5 for year of death \n6 to return\n";
+        cout << "3 for year of birth \n4 for year of death \n5 to return\n";
         cin >> option;
 
         switch(option){
             case '1':
                 cout << "First name: ";
                 cin >> name;
-                searchName(false, name);
+               // output = nameSearch(option, name);
                 break;
             case '2':
                 cout << "Last name: ";
                 cin >> name;
-                searchName(true, name);
+               // output = nameSearch(option, name);
                 break;
             case '3':
-                cout << "Gender(m/f): ";
-                cin >> option;
-                searchGender(option);
-                break;
-            case '4':
                 cout << "Year of birth: ";
                 cin >> year;
-                searchYear(true, year);
+              //  output = yearSearch(option, year);
                 break;
-            case '5':
+            case '4':
                 cout << "Year of death: ";
                 cin >> year;
-                searchYear(false, year);
+              //  output = yearSearch(option, year);
                 break;
-            case '6':
+            case '5':
                 return;
             default:
                 cout << "Invalid input\n";
