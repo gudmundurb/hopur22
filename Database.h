@@ -14,7 +14,7 @@ class Database
         Database();
         ~Database();
         void start();
-        void finish();
+        void end();
         void display();
         void add(Man m1);
         vector<Man> getData();

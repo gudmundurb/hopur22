@@ -7,19 +7,25 @@ ConsoleUI::ConsoleUI()
 void ConsoleUI::start()
 {
     s = Services();
-    while(true)
-    {
-        SwitchMainMenu();
-    }
+    s.start();
+    int cont = 1;
+    do{
+        cont = SwitchMainMenu();
+    }while(cont != 0)
 }
+void ConsoleUI::end()
+{
+    s.end();
+}
+
 void ConsoleUI::ShowMainMenu()
 {
-    system("CLS");
+    cout << "Main menu" << endl;
+   /* system("CLS");
     //  Write from a file to cout
     ifstream menu ("MainMenu.h22");
     cout << menu.rdbuf() << endl << "\t: ";
-    menu.close();
-    cout << "Main menu" << endl;
+    menu.close();*/
 }
 void ConsoleUI::SwitchMainMenu()
 {
@@ -29,38 +35,34 @@ void ConsoleUI::SwitchMainMenu()
     cin >> opt;
     switch (opt)
     {
-    case '1':
-    {
-        Man tempMan;
-        cin >> tempMan;
-        if(tempMan.validate())
-            s.add(tempMan);
-        else
-            cout << "Your input was not correct" << endl;
-        break;
+        case '1':{
+            Man tempMan;
+            cin >> tempMan;
+            if(tempMan.validate())
+                s.add(tempMan);
+            else
+                cout << "Your input was not correct" << endl;
+            s.display();
+            break;
+        }
+        case '2':{
+            s.display();
+            break;
+        }
+        case '3':{
+            SwitchSearchMenu();
+            break;
+        }
+        case '0':{
+            cout << "Have a nice day!";
+            return 0;
+        }
+        default:{
+             cout << "Invalid input\n";
+             break;
+        }
     }
-    case '2':
-    {
-        s.display();
-        break;
-    }
-    case '3':
-    {
-        SwitchSearchMenu();
-        break;
-    }
-    case '0':
-    {
-        cout << "Have a nice day!";
-        exit(EXIT_SUCCESS);
-        break;
-    }
-    default:
-    {
-         cout << "Invalid input\n";
-         break;
-    }
-    }
+    return true,
 }
 void ConsoleUI::ShowSearchMenu ()
 {

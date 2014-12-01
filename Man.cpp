@@ -56,6 +56,7 @@ ostream& operator << (ostream& os, Man& m1)
 istream& operator >> (istream& is, Man& m1)
 {
     cout << "Name: ";
+    cin.ignore(256, '\n');
     getline(is, m1.name);
     cout << "Gender(M/F): ";
     is >> m1.gender;

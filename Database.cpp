@@ -35,7 +35,7 @@ void Database::start()
     }
     datafile.close();
 }
-void Database::finish()
+void Database::end()
 {
     ofstream datafile;
     datafile.open("C:\\Users\\Start\\Documents\\GitHub\\verklegt_1_onn\\Mannalisti\\data.txt");

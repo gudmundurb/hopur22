@@ -8,6 +8,8 @@ class Services
         Services();
         ~Services();
         void display();
+        void start();
+        void end();
         void add(Man m1);
         void sort(char choice);
         vector<Man> nameSearch(string name);

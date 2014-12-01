@@ -13,6 +13,7 @@ class ConsoleUI
         void SwitchSearchMenu();
         ConsoleUI();
         void start();
+        void end();
     protected:
         Services s;
     private:

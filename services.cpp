@@ -2,14 +2,22 @@
 
 Services::Services()
 {
+
+}
+Services::~Services()
+{
+
+}
+void Services::start()
+{
     d = Database();
     d.start();
 }
-
-Services::~Services()
+void Services::end()
 {
-    d.finish();
+    d.end();
 }
+
 void Services::display()
 {
     d.display();
