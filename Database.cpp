@@ -137,3 +137,15 @@ vector<Man> Database::searchDeath(int year){
     }
     return yearVector;
 }
+
+vector<Man> Database::searchGender(char gender){
+
+    vector<Man> genderVector;
+        for(unsigned int i = 0; i < data.size(); i++){
+            if(data[i].getGender() == gender){
+                yearVector.push_back(data[i]);
+            }
+
+        }
+    return genderVector;
+}
