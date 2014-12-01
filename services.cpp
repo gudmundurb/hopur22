@@ -54,4 +54,11 @@ vector<Man> Services::yearSearch(char choice, int year){
     return resultsVector;
 }
 
+vector<Man> Services::genderSearch(char gender) const{
+
+    vector<Man> resultsVector;
+    resultsVector = d.searchGender(gender);
+    return resultsVector;
+}
+
 

@@ -82,5 +82,5 @@ int Man::getDeathYear() const
 
 char Man::getGender() const
 {
-    return gender
+    return gender;
 }

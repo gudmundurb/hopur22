@@ -25,6 +25,7 @@ class Database
         vector<Man> searchName(string name);
         vector<Man> searchBirth(int year);
         vector<Man> searchDeath(int year);
+        vector<Man> searchGender(char gender) const;
     private:
         vector<Man> data;
 };

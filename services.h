@@ -14,6 +14,7 @@ class Services
         void sort(char choice);
         vector<Man> nameSearch(string name);
         vector<Man> yearSearch(char choice, int year);
+        vector<Man> genderSearch(char gender) const;
     private:
         Database d;
 };
