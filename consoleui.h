@@ -8,7 +8,7 @@ class ConsoleUI
 {
     public:
         void ShowMainMenu();
-        void SwitchMainMenu();
+        int SwitchMainMenu();
         void ShowSearchMenu();
         void SwitchSearchMenu();
         ConsoleUI();

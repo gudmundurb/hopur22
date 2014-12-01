@@ -11,7 +11,7 @@ void ConsoleUI::start()
     int cont = 1;
     do{
         cont = SwitchMainMenu();
-    }while(cont != 0)
+    }while(cont != 0);
 }
 void ConsoleUI::end()
 {
@@ -21,13 +21,13 @@ void ConsoleUI::end()
 void ConsoleUI::ShowMainMenu()
 {
     cout << "Main menu" << endl;
-   /* system("CLS");
+    //system("CLS");
     //  Write from a file to cout
     ifstream menu ("MainMenu.h22");
     cout << menu.rdbuf() << endl << "\t: ";
-    menu.close();*/
+    menu.close();
 }
-void ConsoleUI::SwitchMainMenu()
+int ConsoleUI::SwitchMainMenu()
 {
     ShowMainMenu();
     cout << "Option: ";
@@ -62,7 +62,7 @@ void ConsoleUI::SwitchMainMenu()
              break;
         }
     }
-    return true,
+    return true;
 }
 void ConsoleUI::ShowSearchMenu ()
 {
