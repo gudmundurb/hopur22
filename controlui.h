@@ -13,7 +13,7 @@ class ControlUI
         void getData();
         int continueSearch();
         void search();
-        virtual ~ControlUI();
+        ControlUI();
     protected:
     private:
 };

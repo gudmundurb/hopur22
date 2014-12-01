@@ -40,7 +40,7 @@ void ControlUI::getData() {
     Services s;
     cin >> a;
     do {
-    if (a.validate == true) {
+    if (a.validate()) {
         cout << "This entry has been validated and entered into the database!";
         cout << a;
         s.add(a);
@@ -49,7 +49,7 @@ void ControlUI::getData() {
         cout << "Wrong input, try again";
         cin >> a;
     }
-    }while (a.validate == false);
+    }while (!a.validate());
 }
 
 void ControlUI::search(){
