@@ -20,6 +20,7 @@ public:
     string getName() const;
     int getBirthYear() const;
     int getDeathYear() const;
+    char getGender() const;
     friend ofstream& operator << (ofstream& os, Man& m1);
     friend ifstream& operator >> (ifstream& is, Man& m1);
     friend ostream& operator << (ostream& os, Man& m1);

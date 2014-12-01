@@ -79,3 +79,8 @@ int Man::getDeathYear() const
 {
     return deathyear;
 }
+
+char Man::getGender() const
+{
+    return gender
+}
