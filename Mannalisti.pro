@@ -19,10 +19,10 @@ SOURCES += main.cpp \
     man.cpp \
     database.cpp \
     services.cpp \
-    controlui.cpp
+    consoleui.cpp
 
 HEADERS += \
     man.h \
     database.h \
     services.h \
-    controlui.h
+    consoleui.h
