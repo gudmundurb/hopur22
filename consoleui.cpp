@@ -20,29 +20,29 @@ void ConsoleUI::end()
 
 void ConsoleUI::ShowMainMenu()
 {
-    cout << "Main menu" << endl;
-    //system("CLS");
+    system("CLS");
     //  Write from a file to cout
-    ifstream menu ("MainMenu.h22");
+    ifstream menu ("C:\\Users\\Start\\Documents\\GitHub\\verklegt_1_onn\\Mannalisti\\MainMenu.h22");
     cout << menu.rdbuf() << endl << "\t: ";
     menu.close();
 }
 int ConsoleUI::SwitchMainMenu()
 {
     ShowMainMenu();
-    cout << "Option: ";
-    char opt;
-    cin >> opt;
-    switch (opt)
+    char option;
+    cin >> option;
+    switch (option)
     {
         case '1':{
             Man tempMan;
             cin >> tempMan;
             if(tempMan.validate())
+            {
+                cout << tempMan.getName() << " was successfully added to the database" << endl;
                 s.add(tempMan);
+            }
             else
                 cout << "Your input was not correct" << endl;
-            s.display();
             break;
         }
         case '2':{
@@ -62,24 +62,28 @@ int ConsoleUI::SwitchMainMenu()
              break;
         }
     }
-    return true;
+    system("pause");
+    return 1;
 }
 void ConsoleUI::ShowSearchMenu ()
 {
     system("CLS");
     //  Write from a file to cout
-    ifstream menu ("Search.h22");
+    ifstream menu ("C:\\Users\\Start\\Documents\\GitHub\\verklegt_1_onn\\Mannalisti\\Search.h22");
     cout << menu.rdbuf() << endl << "\t: ";
 }
 void ConsoleUI::SwitchSearchMenu()
 {
+    ShowSearchMenu();
+
     char option;
+    cin >> option;
+
     string name;
     char gen;
     int year;
     vector<Man> results;
-    ShowSearchMenu();
-    cin >> option;
+
     switch(option){
         case '1':
             cout << "Name: ";

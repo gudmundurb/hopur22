@@ -70,7 +70,6 @@ void Database::sortDeathYear()
 {
     sort(data.begin(), data.end(), sortByDeathYear);
 }
-
 bool sortByName(const Man& m1, const Man& m2)
 {
     return m1.getName() < m2.getName();
