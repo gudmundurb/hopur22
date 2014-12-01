@@ -9,17 +9,15 @@
 using namespace std;
 class Man{
 private:
-    string firstName;
-    string lastName;
+    string name;
     char gender;
     int birthyear;
     int deathyear;
 public:
     Man();
-    Man(string fname, string lname, char gen, int byear, int dyear);
+    Man(string name, char gen, int byear, int dyear);
     bool validate();
-    string getFirst() const;
-    string getLast() const;
+    string getName() const;
     int getBirthYear() const;
     int getDeathYear() const;
     friend ofstream& operator << (ofstream& os, Man& m1);

@@ -1,10 +1,10 @@
-Sigurjon	Buxnalangi	F	1920	3132
-Asdf	Fdsa	F	1231	1231
-Sigurjon	Freyr	M	1994	2100
-Apple	Iphone	F	2007	2015
-Gudmundur	J.	F	1920	2132
-Siggi	Jonsson	M	1920	2999
-Lenovo	Macson	M	1239	1239
-Orka	Orkudottir	F	1239	1231
-Gudmundur	P.	M	1920	2015
-Steinn	P.	M	1923	1231
+Sigurjon Buxnalangi*F 1920 3132
+Asdf Fdsa*F 1231 1231
+Sigurjon Freyr*M 1994 2100
+Apple Iphone*F 2007 2015
+Gudmundur J.*F 1920 2132
+Siggi Jonsson*M	1920 2999
+Lenovo Macson*M	1239 1239
+Orka Orkudottir*F 1239 1231
+Gudmundur P.*M 1920 2015
+Steinn P.*M 1923 1231

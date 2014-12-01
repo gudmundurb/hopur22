@@ -10,7 +10,7 @@ int main()
     s.display();
     string name;
     cout << "Which name do you want to search for?" << endl;
-    cin >> name;
-    s.nameSearch('1',name);
+    getline(cin,name);
+    s.nameSearch(name);
     return 0;
 }

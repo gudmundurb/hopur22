@@ -10,7 +10,7 @@ class Services
         void display();
         void add(Man m1);
         void sort(char choice);
-        vector<Man> nameSearch(char choice, string name);
+        vector<Man> nameSearch(string name);
         vector<Man> yearSearch(char choice, int year);
     private:
         Database d;

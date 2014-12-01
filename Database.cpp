@@ -17,19 +17,20 @@ void Database::start()
 {
     ifstream datafile;
     datafile.open("C:\\Users\\Start\\Documents\\GitHub\\verklegt_1_onn\\Mannalisti\\data.txt");
-    string tfirst;
-    string tlast;
+    string name;
     char tgen;
     int tbyear;
     int tdyear;
-    while(true)
+    while(!datafile.eof())
     {
-        if(!(datafile >> tfirst)) break;
-        if(!(datafile >> tlast)) break;
-        if(!(datafile >> tgen)) break;
-        if(!(datafile >> tbyear)) break;
-        if(!(datafile >> tdyear)) break;
-        Man temp(tfirst,tlast,tgen,tbyear,tdyear);
+        // inputs
+        char schar = '*';
+        if(!getline(datafile, name, schar)) break;
+        datafile >> tgen;
+        datafile >> tbyear;
+        datafile >> tdyear;
+        datafile.ignore(1);
+        Man temp = Man(name,tgen,tbyear,tdyear);
         data.push_back(temp);
     }
     datafile.close();
@@ -57,13 +58,9 @@ void Database::add(Man m1)
 {
     data.push_back(m1);
 }
-void Database::sortFirstName()
+void Database::sortName()
 {
-    sort(data.begin(), data.end(), sortByFirstName);
-}
-void Database::sortLastName()
-{
-    sort(data.begin(), data.end(), sortByLastName);
+    sort(data.begin(), data.end(), sortByName);
 }
 void Database::sortBirthYear()
 {
@@ -74,13 +71,9 @@ void Database::sortDeathYear()
     sort(data.begin(), data.end(), sortByDeathYear);
 }
 
-bool sortByFirstName(const Man& m1, const Man& m2)
+bool sortByName(const Man& m1, const Man& m2)
 {
-    return m1.getFirst() < m2.getFirst();
-}
-bool sortByLastName(const Man& m1, const Man& m2)
-{
-    return m1.getLast() < m2.getLast();
+    return m1.getName() < m2.getName();
 }
 bool sortByBirthYear(const Man& m1, const Man& m2)
 {
@@ -93,9 +86,9 @@ bool sortByDeathYear(const Man& m1, const Man& m2)
 
 ostream& operator << (ostream& os, vector<Man> vm1)
 {
-    os << left << setw(15) << "First name" << setw(15) << "Last name" << setw(8) << "Gender" << setw(6) << "Born"
+    os << left << setw(25) << "Name" << setw(8) << "Gender" << setw(6) << "Born"
          << "Dead" << endl;
-    for(int i = 0; i < 48; i++)
+    for(int i = 0; i < 43; i++)
     {
         os << "-";
     }
@@ -108,28 +101,17 @@ ostream& operator << (ostream& os, vector<Man> vm1)
     return os;
 }
 
-vector<Man> Database::searchFirstName(string name){
+vector<Man> Database::searchName(string name){
 
     vector<Man> nameVector;
 
         for(unsigned int i = 0; i < data.size(); i++){
-            if(data[i].getFirst() == name){
+            if( data[i].getName().find(name) != string::npos)
+            {
                 nameVector.push_back(data[i]);
             }
 
         }
-    return nameVector;
-}
-
-vector<Man> Database::searchLastName(string name){
-
-    vector<Man> nameVector;
-    for(unsigned int i = 0; i < data.size(); i++){
-        if(data[i].getLast() == name){
-            nameVector.push_back(data[i]);
-        }
-
-    }
     return nameVector;
 }
 

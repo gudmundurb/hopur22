@@ -4,17 +4,15 @@
 Man::Man()
 {
     //cout << "Man constructed." << endl;
-    firstName = "";
-    lastName = "";
+    name = "";
     gender = 'n';
     birthyear = 0;
     deathyear = 0;
 }
-Man::Man(string fname, string lname, char gen, int byear, int dyear)
+Man::Man(string na, char gen, int byear, int dyear)
 {
     //cout << "Man constructed." << endl;
-    firstName = fname;
-    lastName = lname;
+    name = na;
     gender = gen;
     birthyear = byear;
     deathyear = dyear;
@@ -23,47 +21,32 @@ bool Man::validate()
 {
     if(deathyear - birthyear > 110 || birthyear > deathyear) return false;
     if(gender != 'M' && gender != 'F') return false;
-    firstName[0] = toupper(firstName[0]);
-    lastName[0] = toupper(lastName[0]);
-    /*for(unsigned int i = 0; i < firstName.size(); i++)
-    {
-        if(!isalpha(firstName[i])) return false;
-    }
-    for(unsigned int i = 0; i < firstName.size(); i++)
-    {
-        if(!isalpha(lastName[i])) return false;
-    }*/
+    name[0] = toupper(name[0]);
     return true;
 }
 
 ofstream& operator << (ofstream& os, Man& m1)
 {
-    os  << m1.firstName << "\t"
-        << m1.lastName  << "\t"
-        << m1.gender    << "\t"
-        << m1.birthyear << "\t"
+    os  << m1.name << "*"
+        << m1.gender    << " "
+        << m1.birthyear << " "
         << m1.deathyear << endl;
 
     return os;
 }
 ifstream& operator >> (ifstream& is, Man& m1)
 {
-    cout << "First Name: ";
-    is >> m1.firstName;
-    cout << "Last Name: ";
-    is >> m1.lastName;
-    cout << "Gender(M/F): ";
+    char schar = '*';
+    getline(is, m1.name, schar);
     is >> m1.gender;
-    cout << "Year of birth: ";
     is >> m1.birthyear;
-    cout << "Year of death: ";
     is >> m1.deathyear;
+
     return is;
 }
 ostream& operator << (ostream& os, Man& m1)
 {
-    os  << setw(15) << left << m1.firstName
-        << setw(15) << m1.lastName
+    os  << setw(25) << left << m1.name
         << setw(8) << m1.gender
         << setw(6) << m1.birthyear
         << setw(6) << m1.deathyear << endl;
@@ -72,10 +55,8 @@ ostream& operator << (ostream& os, Man& m1)
 }
 istream& operator >> (istream& is, Man& m1)
 {
-    cout << "First Name: ";
-    is >> m1.firstName;
-    cout << "Last Name: ";
-    is >> m1.lastName;
+    cout << "Name: ";
+    getline(is, m1.name);
     cout << "Gender(M/F): ";
     is >> m1.gender;
     cout << "Year of birth: ";
@@ -85,13 +66,9 @@ istream& operator >> (istream& is, Man& m1)
 
     return is;
 }
-string Man::getFirst() const
+string Man::getName() const
 {
-    return firstName;
-}
-string Man::getLast() const
-{
-    return lastName;
+    return name;
 }
 int Man::getBirthYear() const
 {
